@@ -10,11 +10,12 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { MostrarUsuarioComponent } from './componentes/mostrar-usuario/mostrar-usuario.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 import { AuthService } from './servicios/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { AuthService } from './servicios/auth.service';
 
 
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

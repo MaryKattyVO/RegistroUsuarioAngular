@@ -21,7 +21,7 @@ export class RegistrarComponent implements OnInit {
   onSubmitAddUser() {
     this.autService.registerUser(this.email, this.password)
       .then((res) => {
-        this.router.navigate(['/productos']);
+        this.router.navigate(['/mostrar-usuario']);
       }).catch((err) => {
         console.log(err);
       });
