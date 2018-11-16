@@ -14,7 +14,7 @@ export class RegistrarComponent implements OnInit {
   constructor(
     public autService: AuthService,
     public router: Router,
-    public flasMensaje: FlashMessagesService
+    public flashMensaje: FlashMessagesService
   ) { }
 
   ngOnInit() {
@@ -23,9 +23,12 @@ export class RegistrarComponent implements OnInit {
   onSubmitAddUser() {
     this.autService.registerUser(this.email, this.password)
       .then((res) => {
-        this.flasMensaje.show('Usuario creado correctamente',{cssClass:'alert-success',timeout:4000})
+        this.flashMensaje.show('Usuario creado correctamente',
+        {cssClass:'alert-success',timeout:4000})
         this.router.navigate(['/mostrar-usuario']);
       }).catch((err) => {
+        this.flashMensaje.show(err.message,{cssClass:'alert-danger',timeout:4000})
+        this.router.navigate(['/mostrar-usuario']);
         console.log(err);
       });
   }
