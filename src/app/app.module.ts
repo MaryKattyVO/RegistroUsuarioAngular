@@ -10,10 +10,14 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { MostrarUsuarioComponent } from './componentes/mostrar-usuario/mostrar-usuario.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
+
 import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 @NgModule({
@@ -32,10 +36,9 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-
-
+    FlashMessagesModule
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
