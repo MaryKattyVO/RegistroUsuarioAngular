@@ -8,10 +8,8 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link " href="#" routerLink="/">Inicio <span class="sr-only">(current)</span></a>
       </li>
-    </ul>
-    <ul class="navbar-nav mx-auto">
       <li class="nav-item">
         <a class="nav-link" href="#" routerLink="/ingreso" *ngIf="!isLogin">Acceder</a>
       </li>
@@ -22,7 +20,7 @@
         <a class="nav-link" href="#" routerLink="/mostrar-usuario" *ngIf="isLogin">Mostrar Usuario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  href="#" routerLink="/productos" *ngIf="isLogin">Productos</a>
+        <a class="nav-link" href="#" routerLink="/productos" *ngIf="isLogin">Productos</a>
       </li>
       <li class="nav-item" *ngIf="isLogin">
         <a class="nav-link" href="#" (click)="onClickLogout()">Salir</a>
@@ -30,4 +28,3 @@
     </ul>
   </div>
 </nav>
-
